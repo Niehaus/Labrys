@@ -1,0 +1,16 @@
+{
+  "short_name": "Labrys",
+  "name": "Labrys",
+  "icons": [
+    {
+      "src": "/img/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FBF1F7",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#844981"
+}
