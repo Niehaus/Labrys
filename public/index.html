@@ -3,33 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>Labrys</title>
-    <!-- Firebase -->
-    <script src="/__/firebase/6.0.2/firebase-app.js"></script>
-    <script src="/__/firebase-firestore.js"></script>
-    <script src="/__/firebase/init.js"></script>
+<!-- Firebase -->
+<script src="/__/firebase/6.0.2/firebase-app.js"></script>
+<script src="/__/firebase-firestore.js"></script>
+<script src="/__/firebase/init.js"></script>
 
-    <!-- Mapas 0800 -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
+<!-- Mapas 0800 -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="crossorigin=""></script>
 
-   <!-- Nossas coisas -->
-   <link rel="stylesheet" href="/css/master.css">
-   <link rel="stylesheet" href="/css/index.css">
-   <!--<script src="/js/index.js" charset="utf-8"></script>-->
-   <script src="/js/sw.js" charset="utf-8"></script>
+<!-- Load Leaflet from cdn-->
+<!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />-->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet-src.js"></script>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<!-- Load Esri Leaflet from cdn-->
+<script src="https://unpkg.com/esri-leaflet@2.0.8"></script>
+<!-- Load Esri Leaflet Geocoder from cdn-->
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.4/dist/esri-leaflet-geocoder.css">
+<script src="https://unpkg.com/esri-leaflet-geocoder@2.2.4"></script>
 
-   <!-- Meta -->
-   <link rel="manifest" href="/manifest.json">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="theme-color" content="#844981">
+<!-- Nossas coisas -->
+<link rel="stylesheet" href="/css/index.css">
+<script src="/js/sw.js" charset="utf-8"></script>
 
-   <!-- Novas coisas -->
+<!-- Meta -->
+<link rel="manifest" href="/manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#844981">
+
+<!-- Novas coisas -->
 <title>Labrys</title>
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
 <!-- Icon -->
@@ -96,9 +100,8 @@
                   <div class="contents">
                     <h2 class="head-title">Bem Vinda ao Labrys!</h2>
                      <h1 class="section-title">Sobre o projeto:</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat!
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat!</p>
+                    <br><p>Em São João del-Rei não foi encontrado nenhum dado qualitativo e/ou quantitativo em relação à violência lesbofóbica. A proposta do aplicativo é facilitar o registro dessas violências pontuando os locais e quais são elas e, a partir de um banco de dados propor diretrizes urbanas mais pontuais em relação a existência e segurança das mulheres lésbicas na cidade.</p></br>
+                    <p>A escolha do nome do aplicativo, Labrys, faz referência ao machado de duas lâminas que leva o mesmo nome e é o símbolo representativo do movimento de luta das mulheres lésbicas. O Labrys era utilizado como cetro pela deusa Ártemis da mitologia grega, e os rituais associados a ela envolviam atos lésbicos.</p>
                   </div>
                 <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                   <div class="intro-img">
@@ -120,20 +123,21 @@
               <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
             </div>
             <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.3s">
-              <div class="col-lg-7 col-md-12 col-sm-12">
-                <div class="contact-block">
-                  <div class="content">
-                    <p>
-                      Praesent imperdiet, tellus et euismod euismod, risus lorem euismod erat, at finibus neque odio quis metus. Donec vulputate arcu quam. Morbi quis tincidunt ligula. Sed rutrum tincidunt pretium. Mauris auctor, purus a pulvinar fermentum, odio dui vehicula lorem, nec pharetra justo risus quis mi. Ut ac ex sagittis, viverra nisl vel, rhoncus odio.
-                    </p>
-                    <a href="#team" class="btn btn-common mt-3">Realizar Denuncia</a>
-                  </div>
-                </div>
-              </div>
+
               <div class="col-lg-5 col-md-12 col-xs-12">
                 <div class="map">
                   <p class="mb-3">Mapa das agressões registradas em São João del-Rei</p>
                   <main id='mapAtual' style="width:400px;height:400px; text-align:center;"></main>
+                </div>
+              </div>
+
+              <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="contact-block">
+                  <div class="content">
+                    <p>Você não está sozinha!</p>
+                      <p>Obrigada por compartilhar sua denúncia. Juntas nos ajudamos, lutamos e contribuímos para a construção de uma cidade mais consciente e igualitária.</p>
+                    <a href="#team" class="btn btn-common mt-3">Realizar Denuncia</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,17 +157,17 @@
                 <div class="contact-block">
                   <form id="contactForm">
                     <div class="row">
-                      <div class="col-md-6">
+                  <!--   <div class="col-md-6">
                         <div class="form-group">
                           <p class="mb-3" style="color:#42033D;">Endereço</p>
-                          <input type="text" class="form-control" id="name" placeholder="Endereço onde aconteceu a violência" required data-error="Por favor informe o endereço">
+                          <input type="text" class="form-control" id="name" placeholder="Endereço onde aconteceu a violência"  data-error="Por favor informe o endereço">
                           <div class="help-block with-errors"></div>
                         </div>
-                      </div>
+                      </div>-->
                       <div class="col-md-6">
                         <div class="form-group">
-                          <p class="mb-3" style="color:#42033D;">Local</p>
-                          <input type="text" class="form-control"  id="msg_subject" placeholder="Ex.: Bar X, República X, Supermercado X, etc." data-error="Por favor informe o local">
+                          <p class="mb-3" style="color:#42033D;">Nome do Local</p>
+                          <input type="text" class="form-control"  id="msg_subject" placeholder="Ex.: Bar X, República X, Supermercado X, etc." required data-error="Por favor informe o local">
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
@@ -174,7 +178,7 @@
                          <form action="/action_page.php">
                          <class="navbar-brand"><img src="img/fisica.png" style="width:30%;" alt="">
                            <p class="mb-3" style="color:#42033D;">Física</p>
-                           <input type="checkbox" name="agr-fisica"  id="agr-fisica1" value="Sexual">Sexual<br>
+                           <input type="checkbox" name="agr-fisica"  id="agr-fisica1" value="Assédio Sexual">Sexual<br>
                            <input type="checkbox" name="agr-fisica" id="agr-fisica2" value="Agressão Física"> Agressão Física<br>
                            <input type="checkbox" name="agr-fisica" id = "agr-fisica3" value="Outra"> Outra<br><br>
                            </form>
@@ -185,7 +189,7 @@
                           <p class="mb-3" style="color:#42033D;">Simbólica (moral)</p>
                           <input type="checkbox" name="agr-simbol"id="agr-simbol1" value="Assédio Psicológico">Assédio Psicológico<br>
                           <input type="checkbox" name="agr-simbol" id="cagr-simbol2" value="Xingamentos"> Xingamentos<br>
-                          <input type="checkbox" name="agr-simbol" id="agr-simbol3" value="Ameaça"> Ameaça<br>
+                          <input type="checkbox" name="agr-simbol" id="agr-simbol3" value="Ameaças"> Ameaças<br>
                           <input type="checkbox" name="agr-simbol" id="agr-simbol4" value="Outra"> Outra<br><br>
                           </form>
                      </div>
@@ -206,7 +210,7 @@
               </div>
               <div class="col-lg-5 col-md-12 col-xs-12">
                 <div class="map">
-                  <p class="mb-3">Por favor, marque o local do ocorrido</p>
+                  <p class="mb-3"> Clique na <i class="lni-magnifier"></i> e digite o endereço</p>
                   <main id='map' style="width:400px;height:400px; text-align:center;"></main>
                 </div>
               </div>
@@ -228,15 +232,13 @@
                         <div class="content-left">
                           <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
                             <span class="icon">
-                              <i class="lni-rocket"></i>
                             </span>
                             <div class="text">
-                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                              <p>Delegacia da Mulher: <i class="lni-phone-handset"></i> (32) 33....</p>
                             </div>
                           </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
-
                         </div>
                       </div>
 
@@ -261,12 +263,6 @@
                     <div class="textwidget">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis tincidunt est, et euismod purus suscipit quis.</p>
                     </div>
-                    <div class="social-icon">
-                      <a class="facebook" href="#"><i class="lni-facebook-filled"></i></a>
-                      <a class="twitter" href="#"><i class="lni-twitter-filled"></i></a>
-                      <a class="instagram" href="#"><i class="lni-instagram-filled"></i></a>
-                      <a class="linkedin" href="#"><i class="lni-linkedin-filled"></i></a>
-                    </div>
                   </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -276,10 +272,10 @@
                       <a href="https://www.google.com/maps/d/embed?mid=1z_6UELfup1P80x3rC3VS0d-Qd68&hl=pt-BR" width="640" height="480" target="_blank"><i class="lni-map-marker"></i> Campus Tancredo Neves<br> Arquitetura e Urbanismo, UFSJ</a>
                     </li>
                     <li>
-                      <a href="#"><i class="lni-phone-handset"></i> P: +84 846 250 592</a>
+                      <a href="#"><i class="lni-phone-handset"></i> P: +55 35 9 99623161</a>
                     </li>
                     <li>
-                      <a href="http://gmail.com"  target="_blank"><i class="lni-envelope"></i> E: contact@uideck.com</a>
+                      <a href="http://gmail.com"  target="_blank"><i class="lni-envelope"></i> E: memiliabrezende@gmail.com</a>
                     </li>
                   </ul>
                 </div>
@@ -290,10 +286,10 @@
                       <a href="https://www.google.com/maps/d/embed?mid=1z_6UELfup1P80x3rC3VS0d-Qd68&hl=pt-BR" width="640" height="480" target="_blank" ><i class="lni-map-marker"></i>Campus Tancredo Neves<br> Ciência da Computação, UFSJ</a>
                     </li>
                     <li>
-                      <a href="#"  target="_blank" ><i class="lni-phone-handset"></i> P: +84 846 250 592</a>
+                      <a href="#"  target="_blank" ><i class="lni-phone-handset"></i> P: +55 9 91362356</a>
                     </li>
                     <li>
-                      <a href="http://gmail.com"  target="_blank" ><i class="lni-envelope"></i> E: contact@uideck.com</a>
+                      <a href="http://gmail.com"  target="_blank" ><i class="lni-envelope"></i> E: barbs.boecht@gmail.com</a>
                     </li>
                   </ul>
                 </div>
