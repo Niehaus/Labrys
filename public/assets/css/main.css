@@ -30,7 +30,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-size: 38px;
+  font-size: 30px;
   color: #42033D;
   font-weight: 700;
   font-family: 'Ubuntu Condensed', serif;
@@ -54,7 +54,7 @@ p {
   font-weight: 400;
   font-family: 'Ubuntu Condensed', sans-serif;
   margin: 0px;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 ul, ol {

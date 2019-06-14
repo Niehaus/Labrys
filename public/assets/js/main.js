@@ -30,7 +30,6 @@
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoibmllaGF1cyIsImEiOiJjancxOG5qeDcwNGZlNDVvNXEyOGpwaWEzIn0.wxetZ_BKGpdp4JvOqttX4A'
       }).addTo(mapAtual);
-
       //Mapa with searchControl
     //  var map = L.map('map').setView( [-21.1312539, -44.2535548],13);
      var map = L.map('map', {
@@ -43,13 +42,13 @@
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoibmllaGF1cyIsImEiOiJjancxOG5qeDcwNGZlNDVvNXEyOGpwaWEzIn0.wxetZ_BKGpdp4JvOqttX4A'
       }).addTo(map);
-
+      
       var searchControl = L.esri.Geocoding.geosearch().addTo(map);
       //Adding layergroups to searchControl
       var results = L.layerGroup().addTo(map);
       var results2 = L.layerGroup().addTo(mapAtual);
       var popup= L.popup();
-
+      
       var myIcon = new L.Icon({
           iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
           shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -58,7 +57,7 @@
           popupAnchor: [1, -34],
           shadowSize: [41, 41]
           });
-
+   
       searchControl.on('results', function(data){
         results.clearLayers();
         for(var i = data.results.length - 1; i >= 0; i--){
@@ -77,6 +76,54 @@
               );
         }
       })
+      
+    L.marker([-21.126634, -44.249250], { icon: myIcon }).addTo(mapAtual)
+      .bindPopup("Em frente a Fábrica: \n Violência Simbólica - Xingamentos");
+    popup
+      .setLatLng([-21.126634, -44.249250])
+      .setContent([-21.126634, -44.249250].toString())
+
+
+    L.marker([-21.127405, -44.245433], { icon: myIcon }).addTo(mapAtual)
+      .bindPopup("Divina Gula: \n Violência Simbólica – Assédio Psicológico e Verbal");
+    popup
+      .setLatLng([-21.127405, -44.245433])
+      .setContent([-21.127405, -44.245433].toString())
+
+    L.marker([-21.137502, -44.261103], { icon: myIcon }).addTo(mapAtual)
+      .bindPopup("Avenida Tiradentes: \n Violência Física - Sexual");
+    popup
+      .setLatLng([-21.137502, -44.261103])
+      .setContent([-21.137502, -44.261103].toString())
+
+    L.marker([-21.127707, -44.253256], { icon: myIcon }).addTo(mapAtual)
+      .bindPopup("República Aldeia: \n Violência Simbólica – Assedio Psicológico");
+    popup
+      .setLatLng([-21.127707, -44.253256])
+      .setContent([-21.127707, -44.253256].toString())
+
+
+    L.marker([-21.137502, -44.261103], { icon: myIcon }).addTo(mapAtual)
+      .bindPopup("Avenida Tiradentes: \n Violência Simbólica –  Xingamento - Violência Física – Agressão Física");
+    popup
+      .setLatLng([-21.137502, -44.261103])
+      .setContent([-21.137502, -44.261103].toString())
+
+
+    L.marker([-21.131026, -44.254290], { icon: myIcon }).addTo(mapAtual)
+      .bindPopup("Esquina, da Araújo: \n Violência Simbólica – Ameaça");
+    popup
+      .setLatLng([-21.131026, -44.254290])
+      .setContent([-21.131026, -44.254290].toString())
+
+
+    L.marker([-21.125513, -44.246867], { icon: myIcon }).addTo(mapAtual)
+      .bindPopup("R. Ver. Eli Araújo: \n Violência Simbólica – Ameaça");
+    popup
+      .setLatLng([-21.125513, -44.246867])
+      .setContent([-21.125513, -44.246867].toString())
+    //L.marker([-21.126634, -44.249250], { icon: myIcon }).addTo(mapAtual);
+    
     //Mapa denuncia
 /*
     var map = L.map('map', {
