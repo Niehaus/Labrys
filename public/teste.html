@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-        </script>
-    <link rel="stylesheet" href="assets/css/teste.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>Teste Select Screen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+            </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+            </script>
+        <link rel="stylesheet" href="assets/css/teste.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>Teste Select Screen</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function goToMex() {
+                var url = document.getElementById('mex').value;
+                if (url != 'none') {
+                    window.location = "labrysMEX.html";
+                }
+            }
+            function goToBra() {
+                 var url = document.getElementById('bra').value;
+                 if (url != 'none') {
+                 window.location = "labrysBRA.html";
+                 }
+            }
 
-<body>
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-            <!-- Tabs Titles <h2 class="inactive underlineHover">Sign Up </h2>
-            -->
-            
-            <!-- Icon -->
-            <div class="fadeIn first">
-                <br>
-                 <a href="index.html" class="navbar-brand"><img src="img/icon.png" id="icon" alt="User Icon" /></a>
-                 
-            </div>
-                <h2 class="active"> Selecione o país</h2>
-                <form action="/action_page.php">    
-                    <div class="container" style="align-items: stretch">
-                         <div class="row">
-                             <div class="col-6 col-sm-3"><input type="checkbox" name="skill" value="female"> Brasil
-                             </div>
-                             <div class="col-6 col-sm-3"> <img src="img/ico-brasil.png" id="icon" alt="User Icon"
-                                     style="width:10%;" /></div>
+        </script>
+    </head>
 
-                             <!-- Force next columns to break to new line -->
-                             <div class="w-100"></div>
 
-                             <div class="col-6 col-sm-3"><input type="checkbox" name="skill" value="female"> México
-                             </div>
-                             <div class="col-6 col-sm-3"><img src="img/ico-mex.png" id="icon" alt="User Icon"
-                                     style="width:10%;" /></div>
-                         </div>
+    <body>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <div class="fadeIn first"><br>
+                    <div class="navbar-brand"><img src="img/icon.png" id="icon" alt="User Icon" /></div>     
+                    <h2 class="active"> Selecione o país</h2>
+                    <form>
+                            <div class="container">
+                                <div class="dropdown"  >
+                                    <div class="select">
+                                        <span>Países Disponíveis</span>
+                                        <i class="fa fa-chevron-left"></i>
+                                    </div>
+                                        <input type="hidden" name="gender">
+                                        <ul class="dropdown-menu">
+                                           <li id="bra" value="labrysBRA.html" onclick="goToBra()"><img
+                                                   src="img/ico-brasil.png"
+                                                   id="icon"
+                                                   alt="User Icon"
+                                                    style="width:8%" /> Brasil</li>
+                                            <li id="mex" value="labrysMEX.html" onclick="goToMex()">
+                                                <img
+                                                    src="img/ico-mex.png" id="icon"
+                                                    alt="User Icon"
+                                                    style="width:8%" /> México</li>
+                                        </ul>
+                                    </div>
+                                    <span class="msg"></span>
+                                </div>
+                    </form>
                     </div>
-                </form>
-                <script>
-                    $(document).ready(function () {
-                        $('input:checkbox').click(function () {
-                            $('input:checkbox').not(this).prop('checked', false);
-                        });
-                    });
-                </script>
-            <!-- Login Form <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/teste.js"></script>
+    </body>
+</html>
+
+ <!-- Login Form <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
                 <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
                 -->
-            <form>
-                <input type="submit" class="fadeIn fourth" value="Labrys-Me!">
-            </form>
 
-            <!-- Remind Passowrd 
+ <!-- Remind Passowrd 
             <div id="formFooter">
                 <a class="underlineHover" href="#">Forgot Password?</a>
             </div>-->
-
-        </div>
-    </div>
-</body>
-
-</html>

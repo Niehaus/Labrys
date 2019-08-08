@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Labrys Brasil</title>
+    <!-- Firebase -->
+    <script src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <script src="/__/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+
+    <!-- Mapas 0800 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+
+    <!-- Load Leaflet from cdn-->
+    <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />-->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet-src.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <!-- Load Esri Leaflet from cdn-->
+    <script src="https://unpkg.com/esri-leaflet@2.0.8"></script>
+    <!-- Load Esri Leaflet Geocoder from cdn-->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.4/dist/esri-leaflet-geocoder.css">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.4"></script>
+
+    <!-- Nossas coisas -->
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/sw.js" charset="utf-8"></script>
+
+    <!-- Meta -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#844981">
+
+    <!-- Novas coisas -->
+    <title>Labrys</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Icon -->
+    <link rel="stylesheet" href="assets/fonts/line-icons.css">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+
+    <!-- Animate -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+    <header id="header-wrap">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a href="index.html" class="navbar-brand"><img src="img/icon.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#hero-area">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">
+                                Mapa Atualmente
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#team">
+                                Denuncia
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">
+                                Contato
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">
+                                Staff
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Hero Area Start -->
+        <div id="hero-area" class="hero-area-bg">
+            <div class="container">
+                <div class="contents">
+                    <h2 class="head-title">Bem Vinda ao Labrys!</h2>
+                    <h1 class="section-title">Sobre o projeto:</h1>
+                    <br>
+                    <p>Em São João del-Rei não foi encontrado nenhum dado qualitativo e/ou quantitativo em relação à
+                        violência lesbofóbica. A proposta do aplicativo é facilitar o registro dessas violências
+                        pontuando os locais e quais são elas e, a partir de um banco de dados propor diretrizes urbanas
+                        mais pontuais em relação a existência e segurança das mulheres lésbicas na cidade.</p></br>
+                    <p>A escolha do nome do aplicativo, Labrys, faz referência ao machado de duas lâminas que leva o
+                        mesmo nome e é o símbolo representativo do movimento de luta das mulheres lésbicas. O Labrys era
+                        utilizado como cetro pela deusa Ártemis da mitologia grega, e os rituais associados a ela
+                        envolviam atos lésbicos.</p>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                    <div class="intro-img">
+                        <!--<img class="img-fluid" src="assets/img/intro-mobile.png" alt="">-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Hero Area End -->
+    </header>
+    <!-- Header Area wrapper End -->
+
+    <!-- mapAtual Section Start -->
+    <section id="services" class="section-padding bg-gray">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Mapa Atualmente</h2>
+                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+            </div>
+            <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.3s">
+
+                <div class="col-lg-5 col-md-12 col-xs-12">
+                    <div class="map">
+                        <p class="mb-3">Mapa das agressões registradas em São João del-Rei</p>
+                        <main id='mapAtual' style="width:350px;height:350px; text-align:center;"></main>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <div class="contact-block">
+                        <div class="content">
+                            <br></br>
+                            <p>Você não está sozinha!</p>
+                            <p>Obrigada por compartilhar sua denúncia. Juntas nos ajudamos, lutamos e contribuímos para
+                                a construção de uma cidade mais consciente e igualitária.</p>
+                            <a href="#team" class="btn btn-common mt-3">Realizar Denuncia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- mapAtual Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="team" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Realizar Denuncia</h2>
+                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+            </div>
+            <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <div class="contact-block">
+                        <form id="contactForm">
+                            <div class="row">
+                                <!--   <div class="col-md-6">
+                        <div class="form-group">
+                          <p class="mb-3" style="color:#42033D;">Endereço</p>
+                          <input type="text" class="form-control" id="name" placeholder="Endereço onde aconteceu a violência"  data-error="Por favor informe o endereço">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <p class="mb-3" style="color:#42033D;">Nome do Local</p>
+                                        <input type="text" class="form-control" id="msg_subject"
+                                            placeholder="Ex.: Bar X, República X, Supermercado X, etc." required
+                                            data-error="Por favor informe o local">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <p class="mb-3" style="color:#42033D;">Tipo de Violência</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <form action="/action_page.php">
+                                        <class="navbar-brand"><img src="img/fisica.png" style="width:30%;" alt="">
+                                            <p class="mb-3" style="color:#42033D;">Física</p>
+                                            <input type="checkbox" name="agr-fisica" id="agr-fisica1"
+                                                value="Assédio Sexual"> Sexual<br>
+                                            <input type="checkbox" name="agr-fisica" id="agr-fisica2"
+                                                value="Agressão Física"> Agressão Física<br>
+                                            <input type="checkbox" name="agr-fisica" id="agr-fisica3" value="Outra">
+                                            Outra<br><br>
+                                    </form>
+                                </div>
+                                <div class="col-md-6">
+                                    <form action="/action_page.php">
+                                        <class="navbar-brand"><img src="img/simbolica.png" style="width:30%;" alt="">
+                                            <p class="mb-3" style="color:#42033D;">Simbólica (moral)</p>
+                                            <input type="checkbox" name="agr-simbol" id="agr-simbol1"
+                                                value="Assédio Psicológico"> Assédio Psicológico<br>
+                                            <input type="checkbox" name="agr-simbol" id="cagr-simbol2"
+                                                value="Xingamentos"> Xingamentos<br>
+                                            <input type="checkbox" name="agr-simbol" id="agr-simbol3" value="Ameaças">
+                                            Ameaças<br>
+                                            <input type="checkbox" name="agr-simbol" id="agr-simbol4" value="Outra">
+                                            Outra<br><br>
+                                    </form>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <p class="mb-3" style="color:#42033D;">Conte-nos se quiser</p>
+                                        <textarea class="form-control" id="message" placeholder="Sua mensagem" rows="7"
+                                            data-error="Escreva sua mensagem"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 col-xs-12">
+                    <div class="map">
+                        <p class="mb-3"><i class="lni-magnifier"></i> Endereço onde ocorreu a violência</p>
+                        <main id='map' style="width:350px;height:350px; align-content: center; margin-bottom: 15px">
+                        </main>
+                    </div>
+                    <div class="submit-button text-left">
+                        <button class="btn btn-common" id="form-submit" type="submit">Finalizar</button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Features Section Start -->
+    <section id="contact" class="section-padding bg-gray">
+        <div class="container">
+            <div class="section-header text-center">
+                <h4 class="section-title wow fadeInDown" data-wow-delay="0.3s">Contatos úteis</h4>
+                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+            </div>
+            <div class="row">
+                <div class="content-left">
+                    <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
+                        <span class="icon">
+                        </span>
+                        <div class="text">
+                            <p>Delegacia da Mulher: <i class="lni-phone-handset"></i> (32) 3379105610 <br><i
+                                    class="lni-phone-handset"></i> (32) 3379105710 </p>
+                        </div>
+                        <div class="text">
+                            <br>
+                            <p>UPA: <i class="lni-phone-handset"></i> (32) 3373-4111</p>
+                        </div>
+                        <div class="text">
+                            <br>
+                            <p>Samu: <i class="lni-phone-handset"></i> 192 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <!-- Features Section End -->
+
+
+    <!-- Footer Section Start -->
+    <footer id="footer" class="footer-area section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h4 class="section-title wow fadeInDown" data-wow-delay="0.3s">Fale Conosco</h4>
+                <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+                        <div class="widget">
+                            <h3 class="footer-logo  text-center"><img src="img/simbolo.png" style="width:30%;" alt="">
+                            </h3>
+                            <div class="textwidget">
+                                <p>Obrigada por chegar até aqui, toda a equipe agradece de coração a colaboração.</p>
+                                <p>Sozinha eu ando bem, mas com você ando melhor!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <h3 class="footer-titel">Idealização<br> Maria Emília</br></h3>
+                        <ul class="address">
+                            <li>
+                                <a href="https://www.google.com/maps/d/embed?mid=1z_6UELfup1P80x3rC3VS0d-Qd68&hl=pt-BR"
+                                    width="640" height="480" target="_blank"><i class="lni-map-marker"></i> Campus
+                                    Tancredo Neves<br> Arquitetura e Urbanismo, UFSJ</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="lni-phone-handset"></i> P: +55 35 9 99623161</a>
+                            </li>
+                            <li>
+                                <a href="http://gmail.com" target="_blank"><i class="lni-envelope"></i> E:
+                                    memiliabrezende@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <h3 class="footer-titel">Desenvolvimento de Software <br>Bárbara Boechat</br></h3>
+                        <ul class="address">
+                            <li>
+                                <a href="https://www.google.com/maps/d/embed?mid=1z_6UELfup1P80x3rC3VS0d-Qd68&hl=pt-BR"
+                                    width="640" height="480" target="_blank"><i class="lni-map-marker"></i>Campus
+                                    Tancredo Neves<br> Ciência da Computação, UFSJ</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><i class="lni-phone-handset"></i> P: +55 9 91362356</a>
+                            </li>
+                            <li>
+                                <a href="http://gmail.com" target="_blank"><i class="lni-envelope"></i> E:
+                                    barbs.boechat@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright-content">
+                            <p> TFG - Maria Emília 2019.1 <br>Universidade Federal de São João del-Rei</br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader" id="loader-1"></div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.min.js"></script>
+
+
+</body>
+
+</html>
